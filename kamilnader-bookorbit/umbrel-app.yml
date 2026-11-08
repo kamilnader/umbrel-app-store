@@ -9,6 +9,12 @@ folderAccess:
     mounts:
       - service: app
         targetPath: /books
+  - id: downloads
+    name: Downloads
+    note: Optional, for book requests. Pick the same folder your download client saves to (for example Transmission's Downloads folder). It appears in BookOrbit as /downloads.
+    mounts:
+      - service: app
+        targetPath: /downloads
 environment:
   - name: APP_URL
     services:
@@ -22,7 +28,7 @@ environment:
     note: Your time zone, for example Europe/Ljubljana.
 category: files
 name: BookOrbit
-version: "3.7.0"
+version: "3.7.0-1"
 tagline: Your self-hosted library for ebooks, comics and audiobooks
 icon: https://raw.githubusercontent.com/bookorbit/bookorbit/v3.7.0/docs/images/bookorbit-icon.png
 description: >-
@@ -36,7 +42,8 @@ description: >-
 
 
   Coming from BookLore? BookOrbit includes a guided migration.
-releaseNotes: ""
+releaseNotes: >-
+  Package update: adds an optional Downloads folder setting, so BookOrbit can import finished book requests from your download client. Pick the same folder your download client saves to in BookOrbit's Umbrel settings.
 developer: BookOrbit
 website: https://bookorbit.app
 dependencies: []
